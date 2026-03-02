@@ -1,0 +1,2647 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.14.6",
+  "variables": {
+    "allowed_ssh_cidrs": {
+      "value": [
+        "172.31.0.0/16"
+      ]
+    },
+    "aws_region": {
+      "value": "us-east-1"
+    },
+    "database_cidrs": {
+      "value": [
+        "172.31.100.0/24",
+        "172.31.101.0/24"
+      ]
+    },
+    "environment": {
+      "value": "dev"
+    },
+    "project": {
+      "value": "myapp"
+    },
+    "tags": {
+      "value": {
+        "CostCenter": "engineering",
+        "Team": "platform"
+      }
+    },
+    "vpc_id": {
+      "value": "vpc-03ac66a6763c81947"
+    }
+  },
+  "planned_values": {
+    "outputs": {
+      "all_security_group_ids": {
+        "sensitive": false
+      },
+      "app_sg_id": {
+        "sensitive": false
+      },
+      "db_sg_id": {
+        "sensitive": false
+      },
+      "web_sg_id": {
+        "sensitive": false
+      }
+    },
+    "root_module": {
+      "child_modules": [
+        {
+          "resources": [
+            {
+              "address": "module.app_sg.aws_security_group.this",
+              "mode": "managed",
+              "type": "aws_security_group",
+              "name": "this",
+              "provider_name": "registry.terraform.io/hashicorp/aws",
+              "schema_version": 1,
+              "values": {
+                "description": "Security group for application server EC2 instances - internal traffic only",
+                "name": "myapp-dev-app-server",
+                "revoke_rules_on_delete": false,
+                "tags": {
+                  "CISCompliant": "true",
+                  "CostCenter": "engineering",
+                  "Environment": "dev",
+                  "ManagedBy": "terraform",
+                  "Name": "myapp-dev-app-server",
+                  "Project": "myapp",
+                  "Team": "platform"
+                },
+                "tags_all": {
+                  "CISCompliant": "true",
+                  "CostCenter": "engineering",
+                  "Environment": "dev",
+                  "ManagedBy": "terraform",
+                  "Name": "myapp-dev-app-server",
+                  "Project": "myapp",
+                  "Team": "platform"
+                },
+                "timeouts": null,
+                "vpc_id": "vpc-03ac66a6763c81947"
+              },
+              "sensitive_values": {
+                "egress": [],
+                "ingress": [],
+                "tags": {},
+                "tags_all": {}
+              }
+            },
+            {
+              "address": "module.app_sg.aws_security_group_rule.egress[0]",
+              "mode": "managed",
+              "type": "aws_security_group_rule",
+              "name": "egress",
+              "index": 0,
+              "provider_name": "registry.terraform.io/hashicorp/aws",
+              "schema_version": 2,
+              "values": {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "HTTPS outbound for API calls",
+                "from_port": 443,
+                "ipv6_cidr_blocks": null,
+                "prefix_list_ids": null,
+                "protocol": "tcp",
+                "self": false,
+                "timeouts": null,
+                "to_port": 443,
+                "type": "egress"
+              },
+              "sensitive_values": {
+                "cidr_blocks": [
+                  false
+                ]
+              }
+            },
+            {
+              "address": "module.app_sg.aws_security_group_rule.egress[1]",
+              "mode": "managed",
+              "type": "aws_security_group_rule",
+              "name": "egress",
+              "index": 1,
+              "provider_name": "registry.terraform.io/hashicorp/aws",
+              "schema_version": 2,
+              "values": {
+                "cidr_blocks": [
+                  "172.31.100.0/24",
+                  "172.31.101.0/24"
+                ],
+                "description": "Database access",
+                "from_port": 5432,
+                "ipv6_cidr_blocks": null,
+                "prefix_list_ids": null,
+                "protocol": "tcp",
+                "self": false,
+                "timeouts": null,
+                "to_port": 5432,
+                "type": "egress"
+              },
+              "sensitive_values": {
+                "cidr_blocks": [
+                  false,
+                  false
+                ]
+              }
+            },
+            {
+              "address": "module.app_sg.aws_security_group_rule.ingress[0]",
+              "mode": "managed",
+              "type": "aws_security_group_rule",
+              "name": "ingress",
+              "index": 0,
+              "provider_name": "registry.terraform.io/hashicorp/aws",
+              "schema_version": 2,
+              "values": {
+                "cidr_blocks": null,
+                "description": "Traffic from web tier",
+                "from_port": 8080,
+                "ipv6_cidr_blocks": null,
+                "prefix_list_ids": null,
+                "protocol": "tcp",
+                "self": false,
+                "timeouts": null,
+                "to_port": 8080,
+                "type": "ingress"
+              },
+              "sensitive_values": {}
+            },
+            {
+              "address": "module.app_sg.aws_security_group_rule.ingress[1]",
+              "mode": "managed",
+              "type": "aws_security_group_rule",
+              "name": "ingress",
+              "index": 1,
+              "provider_name": "registry.terraform.io/hashicorp/aws",
+              "schema_version": 2,
+              "values": {
+                "cidr_blocks": [
+                  "172.31.0.0/16"
+                ],
+                "description": "SSH from bastion only",
+                "from_port": 22,
+                "ipv6_cidr_blocks": null,
+                "prefix_list_ids": null,
+                "protocol": "tcp",
+                "self": false,
+                "timeouts": null,
+                "to_port": 22,
+                "type": "ingress"
+              },
+              "sensitive_values": {
+                "cidr_blocks": [
+                  false
+                ]
+              }
+            }
+          ],
+          "address": "module.app_sg"
+        },
+        {
+          "resources": [
+            {
+              "address": "module.db_sg.aws_security_group.this",
+              "mode": "managed",
+              "type": "aws_security_group",
+              "name": "this",
+              "provider_name": "registry.terraform.io/hashicorp/aws",
+              "schema_version": 1,
+              "values": {
+                "description": "Security group for RDS/database instances - app tier access only",
+                "name": "myapp-dev-database",
+                "revoke_rules_on_delete": false,
+                "tags": {
+                  "CISCompliant": "true",
+                  "CostCenter": "engineering",
+                  "Environment": "dev",
+                  "ManagedBy": "terraform",
+                  "Name": "myapp-dev-database",
+                  "Project": "myapp",
+                  "Team": "platform"
+                },
+                "tags_all": {
+                  "CISCompliant": "true",
+                  "CostCenter": "engineering",
+                  "Environment": "dev",
+                  "ManagedBy": "terraform",
+                  "Name": "myapp-dev-database",
+                  "Project": "myapp",
+                  "Team": "platform"
+                },
+                "timeouts": null,
+                "vpc_id": "vpc-03ac66a6763c81947"
+              },
+              "sensitive_values": {
+                "egress": [],
+                "ingress": [],
+                "tags": {},
+                "tags_all": {}
+              }
+            },
+            {
+              "address": "module.db_sg.aws_security_group_rule.egress[0]",
+              "mode": "managed",
+              "type": "aws_security_group_rule",
+              "name": "egress",
+              "index": 0,
+              "provider_name": "registry.terraform.io/hashicorp/aws",
+              "schema_version": 2,
+              "values": {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "DNS outbound",
+                "from_port": 53,
+                "ipv6_cidr_blocks": null,
+                "prefix_list_ids": null,
+                "protocol": "udp",
+                "self": false,
+                "timeouts": null,
+                "to_port": 53,
+                "type": "egress"
+              },
+              "sensitive_values": {
+                "cidr_blocks": [
+                  false
+                ]
+              }
+            },
+            {
+              "address": "module.db_sg.aws_security_group_rule.ingress[0]",
+              "mode": "managed",
+              "type": "aws_security_group_rule",
+              "name": "ingress",
+              "index": 0,
+              "provider_name": "registry.terraform.io/hashicorp/aws",
+              "schema_version": 2,
+              "values": {
+                "cidr_blocks": null,
+                "description": "PostgreSQL from app tier",
+                "from_port": 5432,
+                "ipv6_cidr_blocks": null,
+                "prefix_list_ids": null,
+                "protocol": "tcp",
+                "self": false,
+                "timeouts": null,
+                "to_port": 5432,
+                "type": "ingress"
+              },
+              "sensitive_values": {}
+            }
+          ],
+          "address": "module.db_sg"
+        },
+        {
+          "resources": [
+            {
+              "address": "module.web_sg.aws_security_group.this",
+              "mode": "managed",
+              "type": "aws_security_group",
+              "name": "this",
+              "provider_name": "registry.terraform.io/hashicorp/aws",
+              "schema_version": 1,
+              "values": {
+                "description": "Security group for web server EC2 instances - allows HTTPS/HTTP inbound",
+                "name": "myapp-dev-web-server",
+                "revoke_rules_on_delete": false,
+                "tags": {
+                  "CISCompliant": "true",
+                  "CostCenter": "engineering",
+                  "Environment": "dev",
+                  "ManagedBy": "terraform",
+                  "Name": "myapp-dev-web-server",
+                  "Project": "myapp",
+                  "Team": "platform"
+                },
+                "tags_all": {
+                  "CISCompliant": "true",
+                  "CostCenter": "engineering",
+                  "Environment": "dev",
+                  "ManagedBy": "terraform",
+                  "Name": "myapp-dev-web-server",
+                  "Project": "myapp",
+                  "Team": "platform"
+                },
+                "timeouts": null,
+                "vpc_id": "vpc-03ac66a6763c81947"
+              },
+              "sensitive_values": {
+                "egress": [],
+                "ingress": [],
+                "tags": {},
+                "tags_all": {}
+              }
+            },
+            {
+              "address": "module.web_sg.aws_security_group_rule.egress[0]",
+              "mode": "managed",
+              "type": "aws_security_group_rule",
+              "name": "egress",
+              "index": 0,
+              "provider_name": "registry.terraform.io/hashicorp/aws",
+              "schema_version": 2,
+              "values": {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "HTTPS outbound",
+                "from_port": 443,
+                "ipv6_cidr_blocks": null,
+                "prefix_list_ids": null,
+                "protocol": "tcp",
+                "self": false,
+                "timeouts": null,
+                "to_port": 443,
+                "type": "egress"
+              },
+              "sensitive_values": {
+                "cidr_blocks": [
+                  false
+                ]
+              }
+            },
+            {
+              "address": "module.web_sg.aws_security_group_rule.egress[1]",
+              "mode": "managed",
+              "type": "aws_security_group_rule",
+              "name": "egress",
+              "index": 1,
+              "provider_name": "registry.terraform.io/hashicorp/aws",
+              "schema_version": 2,
+              "values": {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "HTTP outbound",
+                "from_port": 80,
+                "ipv6_cidr_blocks": null,
+                "prefix_list_ids": null,
+                "protocol": "tcp",
+                "self": false,
+                "timeouts": null,
+                "to_port": 80,
+                "type": "egress"
+              },
+              "sensitive_values": {
+                "cidr_blocks": [
+                  false
+                ]
+              }
+            },
+            {
+              "address": "module.web_sg.aws_security_group_rule.egress[2]",
+              "mode": "managed",
+              "type": "aws_security_group_rule",
+              "name": "egress",
+              "index": 2,
+              "provider_name": "registry.terraform.io/hashicorp/aws",
+              "schema_version": 2,
+              "values": {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "DNS outbound",
+                "from_port": 53,
+                "ipv6_cidr_blocks": null,
+                "prefix_list_ids": null,
+                "protocol": "udp",
+                "self": false,
+                "timeouts": null,
+                "to_port": 53,
+                "type": "egress"
+              },
+              "sensitive_values": {
+                "cidr_blocks": [
+                  false
+                ]
+              }
+            },
+            {
+              "address": "module.web_sg.aws_security_group_rule.ingress[0]",
+              "mode": "managed",
+              "type": "aws_security_group_rule",
+              "name": "ingress",
+              "index": 0,
+              "provider_name": "registry.terraform.io/hashicorp/aws",
+              "schema_version": 2,
+              "values": {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "HTTPS from internet",
+                "from_port": 443,
+                "ipv6_cidr_blocks": null,
+                "prefix_list_ids": null,
+                "protocol": "tcp",
+                "self": false,
+                "timeouts": null,
+                "to_port": 443,
+                "type": "ingress"
+              },
+              "sensitive_values": {
+                "cidr_blocks": [
+                  false
+                ]
+              }
+            },
+            {
+              "address": "module.web_sg.aws_security_group_rule.ingress[1]",
+              "mode": "managed",
+              "type": "aws_security_group_rule",
+              "name": "ingress",
+              "index": 1,
+              "provider_name": "registry.terraform.io/hashicorp/aws",
+              "schema_version": 2,
+              "values": {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "HTTP from internet (redirect to HTTPS)",
+                "from_port": 80,
+                "ipv6_cidr_blocks": null,
+                "prefix_list_ids": null,
+                "protocol": "tcp",
+                "self": false,
+                "timeouts": null,
+                "to_port": 80,
+                "type": "ingress"
+              },
+              "sensitive_values": {
+                "cidr_blocks": [
+                  false
+                ]
+              }
+            },
+            {
+              "address": "module.web_sg.aws_security_group_rule.ingress[2]",
+              "mode": "managed",
+              "type": "aws_security_group_rule",
+              "name": "ingress",
+              "index": 2,
+              "provider_name": "registry.terraform.io/hashicorp/aws",
+              "schema_version": 2,
+              "values": {
+                "cidr_blocks": [
+                  "172.31.0.0/16"
+                ],
+                "description": "SSH from corporate VPN only",
+                "from_port": 22,
+                "ipv6_cidr_blocks": null,
+                "prefix_list_ids": null,
+                "protocol": "tcp",
+                "self": false,
+                "timeouts": null,
+                "to_port": 22,
+                "type": "ingress"
+              },
+              "sensitive_values": {
+                "cidr_blocks": [
+                  false
+                ]
+              }
+            }
+          ],
+          "address": "module.web_sg"
+        }
+      ]
+    }
+  },
+  "resource_changes": [
+    {
+      "address": "module.app_sg.aws_security_group.this",
+      "module_address": "module.app_sg",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "this",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "description": "Security group for application server EC2 instances - internal traffic only",
+          "name": "myapp-dev-app-server",
+          "revoke_rules_on_delete": false,
+          "tags": {
+            "CISCompliant": "true",
+            "CostCenter": "engineering",
+            "Environment": "dev",
+            "ManagedBy": "terraform",
+            "Name": "myapp-dev-app-server",
+            "Project": "myapp",
+            "Team": "platform"
+          },
+          "tags_all": {
+            "CISCompliant": "true",
+            "CostCenter": "engineering",
+            "Environment": "dev",
+            "ManagedBy": "terraform",
+            "Name": "myapp-dev-app-server",
+            "Project": "myapp",
+            "Team": "platform"
+          },
+          "timeouts": null,
+          "vpc_id": "vpc-03ac66a6763c81947"
+        },
+        "after_unknown": {
+          "arn": true,
+          "egress": true,
+          "id": true,
+          "ingress": true,
+          "name_prefix": true,
+          "owner_id": true,
+          "tags": {},
+          "tags_all": {}
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "egress": [],
+          "ingress": [],
+          "tags": {},
+          "tags_all": {}
+        }
+      }
+    },
+    {
+      "address": "module.app_sg.aws_security_group_rule.egress[0]",
+      "module_address": "module.app_sg",
+      "mode": "managed",
+      "type": "aws_security_group_rule",
+      "name": "egress",
+      "index": 0,
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "cidr_blocks": [
+            "0.0.0.0/0"
+          ],
+          "description": "HTTPS outbound for API calls",
+          "from_port": 443,
+          "ipv6_cidr_blocks": null,
+          "prefix_list_ids": null,
+          "protocol": "tcp",
+          "self": false,
+          "timeouts": null,
+          "to_port": 443,
+          "type": "egress"
+        },
+        "after_unknown": {
+          "cidr_blocks": [
+            false
+          ],
+          "id": true,
+          "security_group_id": true,
+          "security_group_rule_id": true,
+          "source_security_group_id": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "cidr_blocks": [
+            false
+          ]
+        }
+      }
+    },
+    {
+      "address": "module.app_sg.aws_security_group_rule.egress[1]",
+      "module_address": "module.app_sg",
+      "mode": "managed",
+      "type": "aws_security_group_rule",
+      "name": "egress",
+      "index": 1,
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "cidr_blocks": [
+            "172.31.100.0/24",
+            "172.31.101.0/24"
+          ],
+          "description": "Database access",
+          "from_port": 5432,
+          "ipv6_cidr_blocks": null,
+          "prefix_list_ids": null,
+          "protocol": "tcp",
+          "self": false,
+          "timeouts": null,
+          "to_port": 5432,
+          "type": "egress"
+        },
+        "after_unknown": {
+          "cidr_blocks": [
+            false,
+            false
+          ],
+          "id": true,
+          "security_group_id": true,
+          "security_group_rule_id": true,
+          "source_security_group_id": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "cidr_blocks": [
+            false,
+            false
+          ]
+        }
+      }
+    },
+    {
+      "address": "module.app_sg.aws_security_group_rule.ingress[0]",
+      "module_address": "module.app_sg",
+      "mode": "managed",
+      "type": "aws_security_group_rule",
+      "name": "ingress",
+      "index": 0,
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "cidr_blocks": null,
+          "description": "Traffic from web tier",
+          "from_port": 8080,
+          "ipv6_cidr_blocks": null,
+          "prefix_list_ids": null,
+          "protocol": "tcp",
+          "self": false,
+          "timeouts": null,
+          "to_port": 8080,
+          "type": "ingress"
+        },
+        "after_unknown": {
+          "id": true,
+          "security_group_id": true,
+          "security_group_rule_id": true,
+          "source_security_group_id": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "module.app_sg.aws_security_group_rule.ingress[1]",
+      "module_address": "module.app_sg",
+      "mode": "managed",
+      "type": "aws_security_group_rule",
+      "name": "ingress",
+      "index": 1,
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "cidr_blocks": [
+            "172.31.0.0/16"
+          ],
+          "description": "SSH from bastion only",
+          "from_port": 22,
+          "ipv6_cidr_blocks": null,
+          "prefix_list_ids": null,
+          "protocol": "tcp",
+          "self": false,
+          "timeouts": null,
+          "to_port": 22,
+          "type": "ingress"
+        },
+        "after_unknown": {
+          "cidr_blocks": [
+            false
+          ],
+          "id": true,
+          "security_group_id": true,
+          "security_group_rule_id": true,
+          "source_security_group_id": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "cidr_blocks": [
+            false
+          ]
+        }
+      }
+    },
+    {
+      "address": "module.db_sg.aws_security_group.this",
+      "module_address": "module.db_sg",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "this",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "description": "Security group for RDS/database instances - app tier access only",
+          "name": "myapp-dev-database",
+          "revoke_rules_on_delete": false,
+          "tags": {
+            "CISCompliant": "true",
+            "CostCenter": "engineering",
+            "Environment": "dev",
+            "ManagedBy": "terraform",
+            "Name": "myapp-dev-database",
+            "Project": "myapp",
+            "Team": "platform"
+          },
+          "tags_all": {
+            "CISCompliant": "true",
+            "CostCenter": "engineering",
+            "Environment": "dev",
+            "ManagedBy": "terraform",
+            "Name": "myapp-dev-database",
+            "Project": "myapp",
+            "Team": "platform"
+          },
+          "timeouts": null,
+          "vpc_id": "vpc-03ac66a6763c81947"
+        },
+        "after_unknown": {
+          "arn": true,
+          "egress": true,
+          "id": true,
+          "ingress": true,
+          "name_prefix": true,
+          "owner_id": true,
+          "tags": {},
+          "tags_all": {}
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "egress": [],
+          "ingress": [],
+          "tags": {},
+          "tags_all": {}
+        }
+      }
+    },
+    {
+      "address": "module.db_sg.aws_security_group_rule.egress[0]",
+      "module_address": "module.db_sg",
+      "mode": "managed",
+      "type": "aws_security_group_rule",
+      "name": "egress",
+      "index": 0,
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "cidr_blocks": [
+            "0.0.0.0/0"
+          ],
+          "description": "DNS outbound",
+          "from_port": 53,
+          "ipv6_cidr_blocks": null,
+          "prefix_list_ids": null,
+          "protocol": "udp",
+          "self": false,
+          "timeouts": null,
+          "to_port": 53,
+          "type": "egress"
+        },
+        "after_unknown": {
+          "cidr_blocks": [
+            false
+          ],
+          "id": true,
+          "security_group_id": true,
+          "security_group_rule_id": true,
+          "source_security_group_id": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "cidr_blocks": [
+            false
+          ]
+        }
+      }
+    },
+    {
+      "address": "module.db_sg.aws_security_group_rule.ingress[0]",
+      "module_address": "module.db_sg",
+      "mode": "managed",
+      "type": "aws_security_group_rule",
+      "name": "ingress",
+      "index": 0,
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "cidr_blocks": null,
+          "description": "PostgreSQL from app tier",
+          "from_port": 5432,
+          "ipv6_cidr_blocks": null,
+          "prefix_list_ids": null,
+          "protocol": "tcp",
+          "self": false,
+          "timeouts": null,
+          "to_port": 5432,
+          "type": "ingress"
+        },
+        "after_unknown": {
+          "id": true,
+          "security_group_id": true,
+          "security_group_rule_id": true,
+          "source_security_group_id": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "module.web_sg.aws_security_group.this",
+      "module_address": "module.web_sg",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "this",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "description": "Security group for web server EC2 instances - allows HTTPS/HTTP inbound",
+          "name": "myapp-dev-web-server",
+          "revoke_rules_on_delete": false,
+          "tags": {
+            "CISCompliant": "true",
+            "CostCenter": "engineering",
+            "Environment": "dev",
+            "ManagedBy": "terraform",
+            "Name": "myapp-dev-web-server",
+            "Project": "myapp",
+            "Team": "platform"
+          },
+          "tags_all": {
+            "CISCompliant": "true",
+            "CostCenter": "engineering",
+            "Environment": "dev",
+            "ManagedBy": "terraform",
+            "Name": "myapp-dev-web-server",
+            "Project": "myapp",
+            "Team": "platform"
+          },
+          "timeouts": null,
+          "vpc_id": "vpc-03ac66a6763c81947"
+        },
+        "after_unknown": {
+          "arn": true,
+          "egress": true,
+          "id": true,
+          "ingress": true,
+          "name_prefix": true,
+          "owner_id": true,
+          "tags": {},
+          "tags_all": {}
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "egress": [],
+          "ingress": [],
+          "tags": {},
+          "tags_all": {}
+        }
+      }
+    },
+    {
+      "address": "module.web_sg.aws_security_group_rule.egress[0]",
+      "module_address": "module.web_sg",
+      "mode": "managed",
+      "type": "aws_security_group_rule",
+      "name": "egress",
+      "index": 0,
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "cidr_blocks": [
+            "0.0.0.0/0"
+          ],
+          "description": "HTTPS outbound",
+          "from_port": 443,
+          "ipv6_cidr_blocks": null,
+          "prefix_list_ids": null,
+          "protocol": "tcp",
+          "self": false,
+          "timeouts": null,
+          "to_port": 443,
+          "type": "egress"
+        },
+        "after_unknown": {
+          "cidr_blocks": [
+            false
+          ],
+          "id": true,
+          "security_group_id": true,
+          "security_group_rule_id": true,
+          "source_security_group_id": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "cidr_blocks": [
+            false
+          ]
+        }
+      }
+    },
+    {
+      "address": "module.web_sg.aws_security_group_rule.egress[1]",
+      "module_address": "module.web_sg",
+      "mode": "managed",
+      "type": "aws_security_group_rule",
+      "name": "egress",
+      "index": 1,
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "cidr_blocks": [
+            "0.0.0.0/0"
+          ],
+          "description": "HTTP outbound",
+          "from_port": 80,
+          "ipv6_cidr_blocks": null,
+          "prefix_list_ids": null,
+          "protocol": "tcp",
+          "self": false,
+          "timeouts": null,
+          "to_port": 80,
+          "type": "egress"
+        },
+        "after_unknown": {
+          "cidr_blocks": [
+            false
+          ],
+          "id": true,
+          "security_group_id": true,
+          "security_group_rule_id": true,
+          "source_security_group_id": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "cidr_blocks": [
+            false
+          ]
+        }
+      }
+    },
+    {
+      "address": "module.web_sg.aws_security_group_rule.egress[2]",
+      "module_address": "module.web_sg",
+      "mode": "managed",
+      "type": "aws_security_group_rule",
+      "name": "egress",
+      "index": 2,
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "cidr_blocks": [
+            "0.0.0.0/0"
+          ],
+          "description": "DNS outbound",
+          "from_port": 53,
+          "ipv6_cidr_blocks": null,
+          "prefix_list_ids": null,
+          "protocol": "udp",
+          "self": false,
+          "timeouts": null,
+          "to_port": 53,
+          "type": "egress"
+        },
+        "after_unknown": {
+          "cidr_blocks": [
+            false
+          ],
+          "id": true,
+          "security_group_id": true,
+          "security_group_rule_id": true,
+          "source_security_group_id": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "cidr_blocks": [
+            false
+          ]
+        }
+      }
+    },
+    {
+      "address": "module.web_sg.aws_security_group_rule.ingress[0]",
+      "module_address": "module.web_sg",
+      "mode": "managed",
+      "type": "aws_security_group_rule",
+      "name": "ingress",
+      "index": 0,
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "cidr_blocks": [
+            "0.0.0.0/0"
+          ],
+          "description": "HTTPS from internet",
+          "from_port": 443,
+          "ipv6_cidr_blocks": null,
+          "prefix_list_ids": null,
+          "protocol": "tcp",
+          "self": false,
+          "timeouts": null,
+          "to_port": 443,
+          "type": "ingress"
+        },
+        "after_unknown": {
+          "cidr_blocks": [
+            false
+          ],
+          "id": true,
+          "security_group_id": true,
+          "security_group_rule_id": true,
+          "source_security_group_id": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "cidr_blocks": [
+            false
+          ]
+        }
+      }
+    },
+    {
+      "address": "module.web_sg.aws_security_group_rule.ingress[1]",
+      "module_address": "module.web_sg",
+      "mode": "managed",
+      "type": "aws_security_group_rule",
+      "name": "ingress",
+      "index": 1,
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "cidr_blocks": [
+            "0.0.0.0/0"
+          ],
+          "description": "HTTP from internet (redirect to HTTPS)",
+          "from_port": 80,
+          "ipv6_cidr_blocks": null,
+          "prefix_list_ids": null,
+          "protocol": "tcp",
+          "self": false,
+          "timeouts": null,
+          "to_port": 80,
+          "type": "ingress"
+        },
+        "after_unknown": {
+          "cidr_blocks": [
+            false
+          ],
+          "id": true,
+          "security_group_id": true,
+          "security_group_rule_id": true,
+          "source_security_group_id": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "cidr_blocks": [
+            false
+          ]
+        }
+      }
+    },
+    {
+      "address": "module.web_sg.aws_security_group_rule.ingress[2]",
+      "module_address": "module.web_sg",
+      "mode": "managed",
+      "type": "aws_security_group_rule",
+      "name": "ingress",
+      "index": 2,
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "cidr_blocks": [
+            "172.31.0.0/16"
+          ],
+          "description": "SSH from corporate VPN only",
+          "from_port": 22,
+          "ipv6_cidr_blocks": null,
+          "prefix_list_ids": null,
+          "protocol": "tcp",
+          "self": false,
+          "timeouts": null,
+          "to_port": 22,
+          "type": "ingress"
+        },
+        "after_unknown": {
+          "cidr_blocks": [
+            false
+          ],
+          "id": true,
+          "security_group_id": true,
+          "security_group_rule_id": true,
+          "source_security_group_id": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "cidr_blocks": [
+            false
+          ]
+        }
+      }
+    }
+  ],
+  "output_changes": {
+    "all_security_group_ids": {
+      "actions": [
+        "create"
+      ],
+      "before": null,
+      "after": [
+        null,
+        null,
+        null
+      ],
+      "after_unknown": [
+        true,
+        true,
+        true
+      ],
+      "before_sensitive": false,
+      "after_sensitive": false
+    },
+    "app_sg_id": {
+      "actions": [
+        "create"
+      ],
+      "before": null,
+      "after_unknown": true,
+      "before_sensitive": false,
+      "after_sensitive": false
+    },
+    "db_sg_id": {
+      "actions": [
+        "create"
+      ],
+      "before": null,
+      "after_unknown": true,
+      "before_sensitive": false,
+      "after_sensitive": false
+    },
+    "web_sg_id": {
+      "actions": [
+        "create"
+      ],
+      "before": null,
+      "after_unknown": true,
+      "before_sensitive": false,
+      "after_sensitive": false
+    }
+  },
+  "configuration": {
+    "provider_config": {
+      "aws": {
+        "name": "aws",
+        "full_name": "registry.terraform.io/hashicorp/aws",
+        "version_constraint": "~> 5.0",
+        "expressions": {
+          "default_tags": [
+            {
+              "tags": {
+                "references": [
+                  "var.environment",
+                  "var.project"
+                ]
+              }
+            }
+          ],
+          "region": {
+            "references": [
+              "var.aws_region"
+            ]
+          }
+        }
+      }
+    },
+    "root_module": {
+      "outputs": {
+        "all_security_group_ids": {
+          "expression": {
+            "references": [
+              "module.web_sg.security_group_id",
+              "module.web_sg",
+              "module.app_sg.security_group_id",
+              "module.app_sg",
+              "module.db_sg.security_group_id",
+              "module.db_sg"
+            ]
+          },
+          "description": "All security group IDs for validation"
+        },
+        "app_sg_id": {
+          "expression": {
+            "references": [
+              "module.app_sg.security_group_id",
+              "module.app_sg"
+            ]
+          },
+          "description": "App server security group ID"
+        },
+        "db_sg_id": {
+          "expression": {
+            "references": [
+              "module.db_sg.security_group_id",
+              "module.db_sg"
+            ]
+          },
+          "description": "Database security group ID"
+        },
+        "web_sg_id": {
+          "expression": {
+            "references": [
+              "module.web_sg.security_group_id",
+              "module.web_sg"
+            ]
+          },
+          "description": "Web server security group ID"
+        }
+      },
+      "module_calls": {
+        "app_sg": {
+          "source": "../../modules/security-group",
+          "expressions": {
+            "description": {
+              "constant_value": "Security group for application server EC2 instances - internal traffic only"
+            },
+            "egress_rules": {
+              "references": [
+                "var.database_cidrs"
+              ]
+            },
+            "environment": {
+              "references": [
+                "var.environment"
+              ]
+            },
+            "ingress_rules": {
+              "references": [
+                "module.web_sg.security_group_id",
+                "module.web_sg",
+                "var.allowed_ssh_cidrs"
+              ]
+            },
+            "name": {
+              "constant_value": "app-server"
+            },
+            "project": {
+              "references": [
+                "var.project"
+              ]
+            },
+            "tags": {
+              "references": [
+                "var.tags"
+              ]
+            },
+            "vpc_id": {
+              "references": [
+                "var.vpc_id"
+              ]
+            }
+          },
+          "module": {
+            "outputs": {
+              "security_group_arn": {
+                "expression": {
+                  "references": [
+                    "aws_security_group.this.arn",
+                    "aws_security_group.this"
+                  ]
+                },
+                "description": "The ARN of the security group"
+              },
+              "security_group_id": {
+                "expression": {
+                  "references": [
+                    "aws_security_group.this.id",
+                    "aws_security_group.this"
+                  ]
+                },
+                "description": "The ID of the security group"
+              },
+              "security_group_name": {
+                "expression": {
+                  "references": [
+                    "aws_security_group.this.name",
+                    "aws_security_group.this"
+                  ]
+                },
+                "description": "The name of the security group"
+              },
+              "security_group_vpc_id": {
+                "expression": {
+                  "references": [
+                    "aws_security_group.this.vpc_id",
+                    "aws_security_group.this"
+                  ]
+                },
+                "description": "The VPC ID of the security group"
+              }
+            },
+            "resources": [
+              {
+                "address": "aws_security_group.this",
+                "mode": "managed",
+                "type": "aws_security_group",
+                "name": "this",
+                "provider_config_key": "aws",
+                "expressions": {
+                  "description": {
+                    "references": [
+                      "var.description"
+                    ]
+                  },
+                  "name": {
+                    "references": [
+                      "var.project",
+                      "var.environment",
+                      "var.name"
+                    ]
+                  },
+                  "tags": {
+                    "references": [
+                      "var.tags",
+                      "var.project",
+                      "var.environment",
+                      "var.name",
+                      "var.environment",
+                      "var.project"
+                    ]
+                  },
+                  "vpc_id": {
+                    "references": [
+                      "var.vpc_id"
+                    ]
+                  }
+                },
+                "schema_version": 1
+              },
+              {
+                "address": "aws_security_group_rule.egress",
+                "mode": "managed",
+                "type": "aws_security_group_rule",
+                "name": "egress",
+                "provider_config_key": "aws",
+                "expressions": {
+                  "cidr_blocks": {
+                    "references": [
+                      "var.egress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "description": {
+                    "references": [
+                      "var.egress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "from_port": {
+                    "references": [
+                      "var.egress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "protocol": {
+                    "references": [
+                      "var.egress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "security_group_id": {
+                    "references": [
+                      "aws_security_group.this.id",
+                      "aws_security_group.this"
+                    ]
+                  },
+                  "source_security_group_id": {
+                    "references": [
+                      "var.egress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "to_port": {
+                    "references": [
+                      "var.egress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "type": {
+                    "constant_value": "egress"
+                  }
+                },
+                "schema_version": 2,
+                "count_expression": {
+                  "references": [
+                    "var.egress_rules"
+                  ]
+                }
+              },
+              {
+                "address": "aws_security_group_rule.ingress",
+                "mode": "managed",
+                "type": "aws_security_group_rule",
+                "name": "ingress",
+                "provider_config_key": "aws",
+                "expressions": {
+                  "cidr_blocks": {
+                    "references": [
+                      "var.ingress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "description": {
+                    "references": [
+                      "var.ingress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "from_port": {
+                    "references": [
+                      "var.ingress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "protocol": {
+                    "references": [
+                      "var.ingress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "security_group_id": {
+                    "references": [
+                      "aws_security_group.this.id",
+                      "aws_security_group.this"
+                    ]
+                  },
+                  "source_security_group_id": {
+                    "references": [
+                      "var.ingress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "to_port": {
+                    "references": [
+                      "var.ingress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "type": {
+                    "constant_value": "ingress"
+                  }
+                },
+                "schema_version": 2,
+                "count_expression": {
+                  "references": [
+                    "var.ingress_rules"
+                  ]
+                }
+              }
+            ],
+            "variables": {
+              "description": {
+                "description": "Description of the security group (CIS requires non-empty)"
+              },
+              "egress_rules": {
+                "default": [
+                  {
+                    "cidr_blocks": [
+                      "0.0.0.0/0"
+                    ],
+                    "description": "Allow HTTPS outbound",
+                    "from_port": 443,
+                    "protocol": "tcp",
+                    "source_security_group_id": null,
+                    "to_port": 443
+                  },
+                  {
+                    "cidr_blocks": [
+                      "0.0.0.0/0"
+                    ],
+                    "description": "Allow HTTP outbound",
+                    "from_port": 80,
+                    "protocol": "tcp",
+                    "source_security_group_id": null,
+                    "to_port": 80
+                  },
+                  {
+                    "cidr_blocks": [
+                      "0.0.0.0/0"
+                    ],
+                    "description": "Allow DNS outbound",
+                    "from_port": 53,
+                    "protocol": "udp",
+                    "source_security_group_id": null,
+                    "to_port": 53
+                  }
+                ],
+                "description": "List of egress rule objects"
+              },
+              "environment": {
+                "description": "Environment name (dev, staging, prod)"
+              },
+              "ingress_rules": {
+                "default": [],
+                "description": "List of ingress rule objects"
+              },
+              "name": {
+                "description": "Name suffix for the security group"
+              },
+              "project": {
+                "description": "Project name for tagging"
+              },
+              "tags": {
+                "default": {},
+                "description": "Additional tags to apply"
+              },
+              "vpc_id": {
+                "description": "VPC ID where the security group will be created"
+              }
+            }
+          }
+        },
+        "db_sg": {
+          "source": "../../modules/security-group",
+          "expressions": {
+            "description": {
+              "constant_value": "Security group for RDS/database instances - app tier access only"
+            },
+            "egress_rules": {
+              "constant_value": [
+                {
+                  "cidr_blocks": [
+                    "0.0.0.0/0"
+                  ],
+                  "description": "DNS outbound",
+                  "from_port": 53,
+                  "protocol": "udp",
+                  "to_port": 53
+                }
+              ]
+            },
+            "environment": {
+              "references": [
+                "var.environment"
+              ]
+            },
+            "ingress_rules": {
+              "references": [
+                "module.app_sg.security_group_id",
+                "module.app_sg"
+              ]
+            },
+            "name": {
+              "constant_value": "database"
+            },
+            "project": {
+              "references": [
+                "var.project"
+              ]
+            },
+            "tags": {
+              "references": [
+                "var.tags"
+              ]
+            },
+            "vpc_id": {
+              "references": [
+                "var.vpc_id"
+              ]
+            }
+          },
+          "module": {
+            "outputs": {
+              "security_group_arn": {
+                "expression": {
+                  "references": [
+                    "aws_security_group.this.arn",
+                    "aws_security_group.this"
+                  ]
+                },
+                "description": "The ARN of the security group"
+              },
+              "security_group_id": {
+                "expression": {
+                  "references": [
+                    "aws_security_group.this.id",
+                    "aws_security_group.this"
+                  ]
+                },
+                "description": "The ID of the security group"
+              },
+              "security_group_name": {
+                "expression": {
+                  "references": [
+                    "aws_security_group.this.name",
+                    "aws_security_group.this"
+                  ]
+                },
+                "description": "The name of the security group"
+              },
+              "security_group_vpc_id": {
+                "expression": {
+                  "references": [
+                    "aws_security_group.this.vpc_id",
+                    "aws_security_group.this"
+                  ]
+                },
+                "description": "The VPC ID of the security group"
+              }
+            },
+            "resources": [
+              {
+                "address": "aws_security_group.this",
+                "mode": "managed",
+                "type": "aws_security_group",
+                "name": "this",
+                "provider_config_key": "aws",
+                "expressions": {
+                  "description": {
+                    "references": [
+                      "var.description"
+                    ]
+                  },
+                  "name": {
+                    "references": [
+                      "var.project",
+                      "var.environment",
+                      "var.name"
+                    ]
+                  },
+                  "tags": {
+                    "references": [
+                      "var.tags",
+                      "var.project",
+                      "var.environment",
+                      "var.name",
+                      "var.environment",
+                      "var.project"
+                    ]
+                  },
+                  "vpc_id": {
+                    "references": [
+                      "var.vpc_id"
+                    ]
+                  }
+                },
+                "schema_version": 1
+              },
+              {
+                "address": "aws_security_group_rule.egress",
+                "mode": "managed",
+                "type": "aws_security_group_rule",
+                "name": "egress",
+                "provider_config_key": "aws",
+                "expressions": {
+                  "cidr_blocks": {
+                    "references": [
+                      "var.egress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "description": {
+                    "references": [
+                      "var.egress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "from_port": {
+                    "references": [
+                      "var.egress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "protocol": {
+                    "references": [
+                      "var.egress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "security_group_id": {
+                    "references": [
+                      "aws_security_group.this.id",
+                      "aws_security_group.this"
+                    ]
+                  },
+                  "source_security_group_id": {
+                    "references": [
+                      "var.egress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "to_port": {
+                    "references": [
+                      "var.egress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "type": {
+                    "constant_value": "egress"
+                  }
+                },
+                "schema_version": 2,
+                "count_expression": {
+                  "references": [
+                    "var.egress_rules"
+                  ]
+                }
+              },
+              {
+                "address": "aws_security_group_rule.ingress",
+                "mode": "managed",
+                "type": "aws_security_group_rule",
+                "name": "ingress",
+                "provider_config_key": "aws",
+                "expressions": {
+                  "cidr_blocks": {
+                    "references": [
+                      "var.ingress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "description": {
+                    "references": [
+                      "var.ingress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "from_port": {
+                    "references": [
+                      "var.ingress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "protocol": {
+                    "references": [
+                      "var.ingress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "security_group_id": {
+                    "references": [
+                      "aws_security_group.this.id",
+                      "aws_security_group.this"
+                    ]
+                  },
+                  "source_security_group_id": {
+                    "references": [
+                      "var.ingress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "to_port": {
+                    "references": [
+                      "var.ingress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "type": {
+                    "constant_value": "ingress"
+                  }
+                },
+                "schema_version": 2,
+                "count_expression": {
+                  "references": [
+                    "var.ingress_rules"
+                  ]
+                }
+              }
+            ],
+            "variables": {
+              "description": {
+                "description": "Description of the security group (CIS requires non-empty)"
+              },
+              "egress_rules": {
+                "default": [
+                  {
+                    "cidr_blocks": [
+                      "0.0.0.0/0"
+                    ],
+                    "description": "Allow HTTPS outbound",
+                    "from_port": 443,
+                    "protocol": "tcp",
+                    "source_security_group_id": null,
+                    "to_port": 443
+                  },
+                  {
+                    "cidr_blocks": [
+                      "0.0.0.0/0"
+                    ],
+                    "description": "Allow HTTP outbound",
+                    "from_port": 80,
+                    "protocol": "tcp",
+                    "source_security_group_id": null,
+                    "to_port": 80
+                  },
+                  {
+                    "cidr_blocks": [
+                      "0.0.0.0/0"
+                    ],
+                    "description": "Allow DNS outbound",
+                    "from_port": 53,
+                    "protocol": "udp",
+                    "source_security_group_id": null,
+                    "to_port": 53
+                  }
+                ],
+                "description": "List of egress rule objects"
+              },
+              "environment": {
+                "description": "Environment name (dev, staging, prod)"
+              },
+              "ingress_rules": {
+                "default": [],
+                "description": "List of ingress rule objects"
+              },
+              "name": {
+                "description": "Name suffix for the security group"
+              },
+              "project": {
+                "description": "Project name for tagging"
+              },
+              "tags": {
+                "default": {},
+                "description": "Additional tags to apply"
+              },
+              "vpc_id": {
+                "description": "VPC ID where the security group will be created"
+              }
+            }
+          }
+        },
+        "web_sg": {
+          "source": "../../modules/security-group",
+          "expressions": {
+            "description": {
+              "constant_value": "Security group for web server EC2 instances - allows HTTPS/HTTP inbound"
+            },
+            "egress_rules": {
+              "constant_value": [
+                {
+                  "cidr_blocks": [
+                    "0.0.0.0/0"
+                  ],
+                  "description": "HTTPS outbound",
+                  "from_port": 443,
+                  "protocol": "tcp",
+                  "to_port": 443
+                },
+                {
+                  "cidr_blocks": [
+                    "0.0.0.0/0"
+                  ],
+                  "description": "HTTP outbound",
+                  "from_port": 80,
+                  "protocol": "tcp",
+                  "to_port": 80
+                },
+                {
+                  "cidr_blocks": [
+                    "0.0.0.0/0"
+                  ],
+                  "description": "DNS outbound",
+                  "from_port": 53,
+                  "protocol": "udp",
+                  "to_port": 53
+                }
+              ]
+            },
+            "environment": {
+              "references": [
+                "var.environment"
+              ]
+            },
+            "ingress_rules": {
+              "references": [
+                "var.allowed_ssh_cidrs"
+              ]
+            },
+            "name": {
+              "constant_value": "web-server"
+            },
+            "project": {
+              "references": [
+                "var.project"
+              ]
+            },
+            "tags": {
+              "references": [
+                "var.tags"
+              ]
+            },
+            "vpc_id": {
+              "references": [
+                "var.vpc_id"
+              ]
+            }
+          },
+          "module": {
+            "outputs": {
+              "security_group_arn": {
+                "expression": {
+                  "references": [
+                    "aws_security_group.this.arn",
+                    "aws_security_group.this"
+                  ]
+                },
+                "description": "The ARN of the security group"
+              },
+              "security_group_id": {
+                "expression": {
+                  "references": [
+                    "aws_security_group.this.id",
+                    "aws_security_group.this"
+                  ]
+                },
+                "description": "The ID of the security group"
+              },
+              "security_group_name": {
+                "expression": {
+                  "references": [
+                    "aws_security_group.this.name",
+                    "aws_security_group.this"
+                  ]
+                },
+                "description": "The name of the security group"
+              },
+              "security_group_vpc_id": {
+                "expression": {
+                  "references": [
+                    "aws_security_group.this.vpc_id",
+                    "aws_security_group.this"
+                  ]
+                },
+                "description": "The VPC ID of the security group"
+              }
+            },
+            "resources": [
+              {
+                "address": "aws_security_group.this",
+                "mode": "managed",
+                "type": "aws_security_group",
+                "name": "this",
+                "provider_config_key": "aws",
+                "expressions": {
+                  "description": {
+                    "references": [
+                      "var.description"
+                    ]
+                  },
+                  "name": {
+                    "references": [
+                      "var.project",
+                      "var.environment",
+                      "var.name"
+                    ]
+                  },
+                  "tags": {
+                    "references": [
+                      "var.tags",
+                      "var.project",
+                      "var.environment",
+                      "var.name",
+                      "var.environment",
+                      "var.project"
+                    ]
+                  },
+                  "vpc_id": {
+                    "references": [
+                      "var.vpc_id"
+                    ]
+                  }
+                },
+                "schema_version": 1
+              },
+              {
+                "address": "aws_security_group_rule.egress",
+                "mode": "managed",
+                "type": "aws_security_group_rule",
+                "name": "egress",
+                "provider_config_key": "aws",
+                "expressions": {
+                  "cidr_blocks": {
+                    "references": [
+                      "var.egress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "description": {
+                    "references": [
+                      "var.egress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "from_port": {
+                    "references": [
+                      "var.egress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "protocol": {
+                    "references": [
+                      "var.egress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "security_group_id": {
+                    "references": [
+                      "aws_security_group.this.id",
+                      "aws_security_group.this"
+                    ]
+                  },
+                  "source_security_group_id": {
+                    "references": [
+                      "var.egress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "to_port": {
+                    "references": [
+                      "var.egress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "type": {
+                    "constant_value": "egress"
+                  }
+                },
+                "schema_version": 2,
+                "count_expression": {
+                  "references": [
+                    "var.egress_rules"
+                  ]
+                }
+              },
+              {
+                "address": "aws_security_group_rule.ingress",
+                "mode": "managed",
+                "type": "aws_security_group_rule",
+                "name": "ingress",
+                "provider_config_key": "aws",
+                "expressions": {
+                  "cidr_blocks": {
+                    "references": [
+                      "var.ingress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "description": {
+                    "references": [
+                      "var.ingress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "from_port": {
+                    "references": [
+                      "var.ingress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "protocol": {
+                    "references": [
+                      "var.ingress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "security_group_id": {
+                    "references": [
+                      "aws_security_group.this.id",
+                      "aws_security_group.this"
+                    ]
+                  },
+                  "source_security_group_id": {
+                    "references": [
+                      "var.ingress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "to_port": {
+                    "references": [
+                      "var.ingress_rules",
+                      "count.index"
+                    ]
+                  },
+                  "type": {
+                    "constant_value": "ingress"
+                  }
+                },
+                "schema_version": 2,
+                "count_expression": {
+                  "references": [
+                    "var.ingress_rules"
+                  ]
+                }
+              }
+            ],
+            "variables": {
+              "description": {
+                "description": "Description of the security group (CIS requires non-empty)"
+              },
+              "egress_rules": {
+                "default": [
+                  {
+                    "cidr_blocks": [
+                      "0.0.0.0/0"
+                    ],
+                    "description": "Allow HTTPS outbound",
+                    "from_port": 443,
+                    "protocol": "tcp",
+                    "source_security_group_id": null,
+                    "to_port": 443
+                  },
+                  {
+                    "cidr_blocks": [
+                      "0.0.0.0/0"
+                    ],
+                    "description": "Allow HTTP outbound",
+                    "from_port": 80,
+                    "protocol": "tcp",
+                    "source_security_group_id": null,
+                    "to_port": 80
+                  },
+                  {
+                    "cidr_blocks": [
+                      "0.0.0.0/0"
+                    ],
+                    "description": "Allow DNS outbound",
+                    "from_port": 53,
+                    "protocol": "udp",
+                    "source_security_group_id": null,
+                    "to_port": 53
+                  }
+                ],
+                "description": "List of egress rule objects"
+              },
+              "environment": {
+                "description": "Environment name (dev, staging, prod)"
+              },
+              "ingress_rules": {
+                "default": [],
+                "description": "List of ingress rule objects"
+              },
+              "name": {
+                "description": "Name suffix for the security group"
+              },
+              "project": {
+                "description": "Project name for tagging"
+              },
+              "tags": {
+                "default": {},
+                "description": "Additional tags to apply"
+              },
+              "vpc_id": {
+                "description": "VPC ID where the security group will be created"
+              }
+            }
+          }
+        }
+      },
+      "variables": {
+        "allowed_ssh_cidrs": {
+          "description": "CIDR blocks allowed to SSH (corporate VPN, bastion, etc.)"
+        },
+        "aws_region": {
+          "default": "us-east-1",
+          "description": "AWS region to deploy resources"
+        },
+        "database_cidrs": {
+          "default": [
+            "10.0.0.0/16"
+          ],
+          "description": "CIDR blocks for database subnet access"
+        },
+        "environment": {
+          "default": "dev",
+          "description": "Environment name"
+        },
+        "project": {
+          "description": "Project name"
+        },
+        "tags": {
+          "default": {},
+          "description": "Additional tags for all resources"
+        },
+        "vpc_id": {
+          "description": "VPC ID for security groups"
+        }
+      }
+    }
+  },
+  "relevant_attributes": [
+    {
+      "resource": "module.db_sg.aws_security_group.this",
+      "attribute": [
+        "id"
+      ]
+    },
+    {
+      "resource": "module.app_sg.aws_security_group.this",
+      "attribute": [
+        "arn"
+      ]
+    },
+    {
+      "resource": "module.db_sg.aws_security_group.this",
+      "attribute": [
+        "vpc_id"
+      ]
+    },
+    {
+      "resource": "module.db_sg.aws_security_group.this",
+      "attribute": [
+        "name"
+      ]
+    },
+    {
+      "resource": "module.web_sg.aws_security_group.this",
+      "attribute": [
+        "arn"
+      ]
+    },
+    {
+      "resource": "module.app_sg.aws_security_group.this",
+      "attribute": [
+        "id"
+      ]
+    },
+    {
+      "resource": "module.web_sg.aws_security_group.this",
+      "attribute": [
+        "name"
+      ]
+    },
+    {
+      "resource": "module.app_sg.aws_security_group.this",
+      "attribute": [
+        "name"
+      ]
+    },
+    {
+      "resource": "module.app_sg.aws_security_group.this",
+      "attribute": [
+        "vpc_id"
+      ]
+    },
+    {
+      "resource": "module.db_sg.aws_security_group.this",
+      "attribute": [
+        "arn"
+      ]
+    },
+    {
+      "resource": "module.web_sg.aws_security_group.this",
+      "attribute": [
+        "id"
+      ]
+    },
+    {
+      "resource": "module.web_sg.aws_security_group.this",
+      "attribute": [
+        "vpc_id"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "address": {
+        "kind": "var",
+        "module": "module.app_sg",
+        "name": "description",
+        "to_display": "module.app_sg.var.description"
+      },
+      "status": "pass",
+      "instances": [
+        {
+          "address": {
+            "module": "module.app_sg",
+            "to_display": "module.app_sg.var.description"
+          },
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "address": {
+        "kind": "var",
+        "module": "module.app_sg",
+        "name": "environment",
+        "to_display": "module.app_sg.var.environment"
+      },
+      "status": "pass",
+      "instances": [
+        {
+          "address": {
+            "module": "module.app_sg",
+            "to_display": "module.app_sg.var.environment"
+          },
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "address": {
+        "kind": "var",
+        "module": "module.app_sg",
+        "name": "ingress_rules",
+        "to_display": "module.app_sg.var.ingress_rules"
+      },
+      "status": "pass",
+      "instances": [
+        {
+          "address": {
+            "module": "module.app_sg",
+            "to_display": "module.app_sg.var.ingress_rules"
+          },
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "address": {
+        "kind": "var",
+        "module": "module.app_sg",
+        "name": "name",
+        "to_display": "module.app_sg.var.name"
+      },
+      "status": "pass",
+      "instances": [
+        {
+          "address": {
+            "module": "module.app_sg",
+            "to_display": "module.app_sg.var.name"
+          },
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "address": {
+        "kind": "var",
+        "module": "module.app_sg",
+        "name": "vpc_id",
+        "to_display": "module.app_sg.var.vpc_id"
+      },
+      "status": "pass",
+      "instances": [
+        {
+          "address": {
+            "module": "module.app_sg",
+            "to_display": "module.app_sg.var.vpc_id"
+          },
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "address": {
+        "kind": "var",
+        "module": "module.db_sg",
+        "name": "description",
+        "to_display": "module.db_sg.var.description"
+      },
+      "status": "pass",
+      "instances": [
+        {
+          "address": {
+            "module": "module.db_sg",
+            "to_display": "module.db_sg.var.description"
+          },
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "address": {
+        "kind": "var",
+        "module": "module.db_sg",
+        "name": "environment",
+        "to_display": "module.db_sg.var.environment"
+      },
+      "status": "pass",
+      "instances": [
+        {
+          "address": {
+            "module": "module.db_sg",
+            "to_display": "module.db_sg.var.environment"
+          },
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "address": {
+        "kind": "var",
+        "module": "module.db_sg",
+        "name": "ingress_rules",
+        "to_display": "module.db_sg.var.ingress_rules"
+      },
+      "status": "pass",
+      "instances": [
+        {
+          "address": {
+            "module": "module.db_sg",
+            "to_display": "module.db_sg.var.ingress_rules"
+          },
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "address": {
+        "kind": "var",
+        "module": "module.db_sg",
+        "name": "name",
+        "to_display": "module.db_sg.var.name"
+      },
+      "status": "pass",
+      "instances": [
+        {
+          "address": {
+            "module": "module.db_sg",
+            "to_display": "module.db_sg.var.name"
+          },
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "address": {
+        "kind": "var",
+        "module": "module.db_sg",
+        "name": "vpc_id",
+        "to_display": "module.db_sg.var.vpc_id"
+      },
+      "status": "pass",
+      "instances": [
+        {
+          "address": {
+            "module": "module.db_sg",
+            "to_display": "module.db_sg.var.vpc_id"
+          },
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "address": {
+        "kind": "var",
+        "module": "module.web_sg",
+        "name": "description",
+        "to_display": "module.web_sg.var.description"
+      },
+      "status": "pass",
+      "instances": [
+        {
+          "address": {
+            "module": "module.web_sg",
+            "to_display": "module.web_sg.var.description"
+          },
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "address": {
+        "kind": "var",
+        "module": "module.web_sg",
+        "name": "environment",
+        "to_display": "module.web_sg.var.environment"
+      },
+      "status": "pass",
+      "instances": [
+        {
+          "address": {
+            "module": "module.web_sg",
+            "to_display": "module.web_sg.var.environment"
+          },
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "address": {
+        "kind": "var",
+        "module": "module.web_sg",
+        "name": "ingress_rules",
+        "to_display": "module.web_sg.var.ingress_rules"
+      },
+      "status": "pass",
+      "instances": [
+        {
+          "address": {
+            "module": "module.web_sg",
+            "to_display": "module.web_sg.var.ingress_rules"
+          },
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "address": {
+        "kind": "var",
+        "module": "module.web_sg",
+        "name": "name",
+        "to_display": "module.web_sg.var.name"
+      },
+      "status": "pass",
+      "instances": [
+        {
+          "address": {
+            "module": "module.web_sg",
+            "to_display": "module.web_sg.var.name"
+          },
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "address": {
+        "kind": "var",
+        "module": "module.web_sg",
+        "name": "vpc_id",
+        "to_display": "module.web_sg.var.vpc_id"
+      },
+      "status": "pass",
+      "instances": [
+        {
+          "address": {
+            "module": "module.web_sg",
+            "to_display": "module.web_sg.var.vpc_id"
+          },
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "address": {
+        "kind": "var",
+        "name": "allowed_ssh_cidrs",
+        "to_display": "var.allowed_ssh_cidrs"
+      },
+      "status": "pass",
+      "instances": [
+        {
+          "address": {
+            "to_display": "var.allowed_ssh_cidrs"
+          },
+          "status": "pass"
+        }
+      ]
+    }
+  ],
+  "timestamp": "2026-03-02T12:55:08Z",
+  "applyable": true,
+  "complete": true,
+  "errored": false
+}

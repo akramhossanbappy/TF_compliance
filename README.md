@@ -7,7 +7,7 @@ A complete repository that provisions AWS EC2 Security Groups with Terraform and
 ## Repository Structure
 
 ```
-aws-sg-cis-repo/
+TF_compliance/
 ├── README.md                          # This file
 ├── terraform/
 │   ├── modules/
@@ -67,7 +67,7 @@ aws-sg-cis-repo/
 
 ```bash
 git clone <your-repo-url>
-cd aws-sg-cis-repo
+cd TF_compliance
 chmod +x scripts/*.sh
 ./scripts/setup.sh
 ```

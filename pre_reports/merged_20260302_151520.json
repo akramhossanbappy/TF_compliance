@@ -1,0 +1,1575 @@
+{
+  "scan_time": "2026-03-02T15:15:24.818064Z",
+  "summary": {
+    "total": 81,
+    "critical": 36,
+    "high": 0,
+    "medium": 0,
+    "low": 45,
+    "info": 0,
+    "tfsec_count": 75,
+    "checkov_count": 6
+  },
+  "findings": [
+    {
+      "id": "AVD-AWS-0104",
+      "title": "An egress security group rule allows traffic to /0.",
+      "description": "An egress security group rule allows traffic to /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 66,
+      "line_end": 66,
+      "impact": "Your port is egressing data to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0104",
+      "title": "An egress security group rule allows traffic to /0.",
+      "description": "An egress security group rule allows traffic to /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 66,
+      "line_end": 66,
+      "impact": "Your port is egressing data to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0104",
+      "title": "An egress security group rule allows traffic to /0.",
+      "description": "An egress security group rule allows traffic to /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.db_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 66,
+      "line_end": 66,
+      "impact": "Your port is egressing data to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0104",
+      "title": "An egress security group rule allows traffic to /0.",
+      "description": "An egress security group rule allows traffic to /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 66,
+      "line_end": 66,
+      "impact": "Your port is egressing data to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0104",
+      "title": "An egress security group rule allows traffic to /0.",
+      "description": "An egress security group rule allows traffic to /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 66,
+      "line_end": 66,
+      "impact": "Your port is egressing data to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0104",
+      "title": "An egress security group rule allows traffic to /0.",
+      "description": "An egress security group rule allows traffic to /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 66,
+      "line_end": 66,
+      "impact": "Your port is egressing data to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0104",
+      "title": "An egress security group rule allows traffic to /0.",
+      "description": "An egress security group rule allows traffic to /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 66,
+      "line_end": 66,
+      "impact": "Your port is egressing data to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0104",
+      "title": "An egress security group rule allows traffic to /0.",
+      "description": "An egress security group rule allows traffic to /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 66,
+      "line_end": 66,
+      "impact": "Your port is egressing data to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0104",
+      "title": "An egress security group rule allows traffic to /0.",
+      "description": "An egress security group rule allows traffic to /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.db_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 66,
+      "line_end": 66,
+      "impact": "Your port is egressing data to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0104",
+      "title": "An egress security group rule allows traffic to /0.",
+      "description": "An egress security group rule allows traffic to /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 66,
+      "line_end": 66,
+      "impact": "Your port is egressing data to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0104",
+      "title": "An egress security group rule allows traffic to /0.",
+      "description": "An egress security group rule allows traffic to /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 66,
+      "line_end": 66,
+      "impact": "Your port is egressing data to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0104",
+      "title": "An egress security group rule allows traffic to /0.",
+      "description": "An egress security group rule allows traffic to /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 66,
+      "line_end": 66,
+      "impact": "Your port is egressing data to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0104",
+      "title": "An egress security group rule allows traffic to /0.",
+      "description": "An egress security group rule allows traffic to /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 66,
+      "line_end": 66,
+      "impact": "Your port is egressing data to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0104",
+      "title": "An egress security group rule allows traffic to /0.",
+      "description": "An egress security group rule allows traffic to /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 66,
+      "line_end": 66,
+      "impact": "Your port is egressing data to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0104",
+      "title": "An egress security group rule allows traffic to /0.",
+      "description": "An egress security group rule allows traffic to /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.db_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 66,
+      "line_end": 66,
+      "impact": "Your port is egressing data to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0104",
+      "title": "An egress security group rule allows traffic to /0.",
+      "description": "An egress security group rule allows traffic to /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Your port is egressing data to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0104",
+      "title": "An egress security group rule allows traffic to /0.",
+      "description": "An egress security group rule allows traffic to /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Your port is egressing data to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0104",
+      "title": "An egress security group rule allows traffic to /0.",
+      "description": "An egress security group rule allows traffic to /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Your port is egressing data to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0107",
+      "title": "An ingress security group rule allows traffic from /0.",
+      "description": "An ingress security group rule allows traffic from /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 44,
+      "line_end": 44,
+      "impact": "Your port exposed to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-ingress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule#cidr_blocks"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0107",
+      "title": "An ingress security group rule allows traffic from /0.",
+      "description": "An ingress security group rule allows traffic from /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 44,
+      "line_end": 44,
+      "impact": "Your port exposed to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-ingress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule#cidr_blocks"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0107",
+      "title": "An ingress security group rule allows traffic from /0.",
+      "description": "An ingress security group rule allows traffic from /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 44,
+      "line_end": 44,
+      "impact": "Your port exposed to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-ingress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule#cidr_blocks"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0107",
+      "title": "An ingress security group rule allows traffic from /0.",
+      "description": "An ingress security group rule allows traffic from /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 44,
+      "line_end": 44,
+      "impact": "Your port exposed to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-ingress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule#cidr_blocks"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0107",
+      "title": "An ingress security group rule allows traffic from /0.",
+      "description": "An ingress security group rule allows traffic from /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 44,
+      "line_end": 44,
+      "impact": "Your port exposed to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-ingress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule#cidr_blocks"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0107",
+      "title": "An ingress security group rule allows traffic from /0.",
+      "description": "An ingress security group rule allows traffic from /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 44,
+      "line_end": 44,
+      "impact": "Your port exposed to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-ingress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule#cidr_blocks"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0107",
+      "title": "An ingress security group rule allows traffic from /0.",
+      "description": "An ingress security group rule allows traffic from /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Your port exposed to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-ingress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule#cidr_blocks"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0107",
+      "title": "An ingress security group rule allows traffic from /0.",
+      "description": "An ingress security group rule allows traffic from /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Your port exposed to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-ingress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule#cidr_blocks"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0107",
+      "title": "An ingress security group rule allows traffic from /0.",
+      "description": "An ingress security group rule allows traffic from /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.db_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Your port exposed to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-ingress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule#cidr_blocks"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0107",
+      "title": "An ingress security group rule allows traffic from /0.",
+      "description": "An ingress security group rule allows traffic from /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Your port exposed to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-ingress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule#cidr_blocks"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0107",
+      "title": "An ingress security group rule allows traffic from /0.",
+      "description": "An ingress security group rule allows traffic from /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.db_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Your port exposed to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-ingress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule#cidr_blocks"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0107",
+      "title": "An ingress security group rule allows traffic from /0.",
+      "description": "An ingress security group rule allows traffic from /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Your port exposed to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-ingress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule#cidr_blocks"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0107",
+      "title": "An ingress security group rule allows traffic from /0.",
+      "description": "An ingress security group rule allows traffic from /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Your port exposed to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-ingress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule#cidr_blocks"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0107",
+      "title": "An ingress security group rule allows traffic from /0.",
+      "description": "An ingress security group rule allows traffic from /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Your port exposed to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-ingress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule#cidr_blocks"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0107",
+      "title": "An ingress security group rule allows traffic from /0.",
+      "description": "An ingress security group rule allows traffic from /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.db_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Your port exposed to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-ingress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule#cidr_blocks"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0107",
+      "title": "An ingress security group rule allows traffic from /0.",
+      "description": "An ingress security group rule allows traffic from /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Your port exposed to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-ingress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule#cidr_blocks"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0107",
+      "title": "An ingress security group rule allows traffic from /0.",
+      "description": "An ingress security group rule allows traffic from /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Your port exposed to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-ingress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule#cidr_blocks"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0107",
+      "title": "An ingress security group rule allows traffic from /0.",
+      "description": "An ingress security group rule allows traffic from /0.",
+      "severity": "CRITICAL",
+      "severity_rank": 4,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Your port exposed to the internet",
+      "resolution": "Set a more restrictive cidr range",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-ingress-sgr/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule#cidr_blocks"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0099",
+      "title": "Missing description for security group.",
+      "description": "Missing description for security group.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 7,
+      "line_end": 26,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0099",
+      "title": "Missing description for security group.",
+      "description": "Missing description for security group.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 7,
+      "line_end": 26,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0099",
+      "title": "Missing description for security group.",
+      "description": "Missing description for security group.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.db_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 7,
+      "line_end": 26,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.db_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.db_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.db_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 55,
+      "line_end": 71,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.db_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.db_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.db_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "AVD-AWS-0124",
+      "title": "Missing description for security group rule.",
+      "description": "Missing description for security group rule.",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.app_sg",
+      "file": "/Users/akram/Desktop/project/TF_compliance/terraform/modules/security-group/main.tf",
+      "line_start": 32,
+      "line_end": 49,
+      "impact": "Descriptions provide context for the firewall rule reasons",
+      "resolution": "Add descriptions for all security groups rules",
+      "links": [
+        "https://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group",
+        "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule"
+      ],
+      "source": "tfsec",
+      "status": "FAILED"
+    },
+    {
+      "id": "CKV2_AWS_5",
+      "title": "CKV2_AWS_5",
+      "description": "CKV2_AWS_5",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.app_sg.aws_security_group.this",
+      "file": "/../../modules/security-group/main.tf",
+      "line_start": 7,
+      "line_end": 26,
+      "impact": "",
+      "resolution": "",
+      "links": [],
+      "source": "checkov",
+      "status": "FAILED"
+    },
+    {
+      "id": "CKV2_AWS_5",
+      "title": "CKV2_AWS_5",
+      "description": "CKV2_AWS_5",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.db_sg.aws_security_group.this",
+      "file": "/../../modules/security-group/main.tf",
+      "line_start": 7,
+      "line_end": 26,
+      "impact": "",
+      "resolution": "",
+      "links": [],
+      "source": "checkov",
+      "status": "FAILED"
+    },
+    {
+      "id": "CKV2_AWS_5",
+      "title": "CKV2_AWS_5",
+      "description": "CKV2_AWS_5",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg.aws_security_group.this",
+      "file": "/../../modules/security-group/main.tf",
+      "line_start": 7,
+      "line_end": 26,
+      "impact": "",
+      "resolution": "",
+      "links": [],
+      "source": "checkov",
+      "status": "FAILED"
+    },
+    {
+      "id": "CKV2_AWS_5",
+      "title": "CKV2_AWS_5",
+      "description": "CKV2_AWS_5",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.app_sg.aws_security_group.this",
+      "file": "/tf.json",
+      "line_start": 60,
+      "line_end": 84,
+      "impact": "",
+      "resolution": "",
+      "links": [],
+      "source": "checkov",
+      "status": "FAILED"
+    },
+    {
+      "id": "CKV2_AWS_5",
+      "title": "CKV2_AWS_5",
+      "description": "CKV2_AWS_5",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.db_sg.aws_security_group.this",
+      "file": "/tf.json",
+      "line_start": 212,
+      "line_end": 236,
+      "impact": "",
+      "resolution": "",
+      "links": [],
+      "source": "checkov",
+      "status": "FAILED"
+    },
+    {
+      "id": "CKV2_AWS_5",
+      "title": "CKV2_AWS_5",
+      "description": "CKV2_AWS_5",
+      "severity": "LOW",
+      "severity_rank": 1,
+      "resource": "module.web_sg.aws_security_group.this",
+      "file": "/tf.json",
+      "line_start": 306,
+      "line_end": 330,
+      "impact": "",
+      "resolution": "",
+      "links": [],
+      "source": "checkov",
+      "status": "FAILED"
+    }
+  ]
+}
