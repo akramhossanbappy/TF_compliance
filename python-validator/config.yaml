@@ -1,0 +1,59 @@
+###############################################################################
+# CIS Benchmark Validation Configuration
+# Customize thresholds, sensitive ports, and allowed CIDRs here.
+###############################################################################
+
+# Sensitive ports that should never be open to 0.0.0.0/0
+sensitive_ports:
+  - port: 22
+    name: SSH
+    severity: HIGH
+  - port: 3389
+    name: RDP
+    severity: HIGH
+  - port: 3306
+    name: MySQL
+    severity: HIGH
+  - port: 5432
+    name: PostgreSQL
+    severity: HIGH
+  - port: 1433
+    name: MSSQL
+    severity: HIGH
+  - port: 6379
+    name: Redis
+    severity: HIGH
+  - port: 27017
+    name: MongoDB
+    severity: HIGH
+  - port: 9200
+    name: Elasticsearch
+    severity: MEDIUM
+  - port: 5601
+    name: Kibana
+    severity: MEDIUM
+  - port: 8080
+    name: HTTP-Alt
+    severity: LOW
+  - port: 8443
+    name: HTTPS-Alt
+    severity: LOW
+
+# CIDR ranges considered too broad (prefix length <= this value)
+max_open_cidr_prefix: 8
+
+# Ports that are acceptable to open to 0.0.0.0/0
+public_allowed_ports:
+  - 80    # HTTP
+  - 443   # HTTPS
+
+# Tags that must be present on every security group
+required_tags:
+  - Name
+  - Environment
+  - ManagedBy
+
+# Report settings
+report:
+  format: both          # json, html, or both
+  output_dir: reports
