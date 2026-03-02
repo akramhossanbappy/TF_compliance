@@ -9,3 +9,4 @@
 ./post_reports/*
 
 ./reports/*
+/terraform/environments/dev/.terraform
