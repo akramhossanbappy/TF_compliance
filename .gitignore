@@ -10,3 +10,4 @@
 
 ./reports/*
 /terraform/environments/dev/.terraform
+*.hcl
