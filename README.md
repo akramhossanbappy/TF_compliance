@@ -4,7 +4,11 @@ A complete repository that provisions AWS EC2 Security Groups with Terraform and
 
 ---
 
+
 ## Repository Structure
+
+
+
 
 ```
 TF_compliance/
@@ -43,6 +47,15 @@ TF_compliance/
 ├── scripts/
 │   ├── setup.sh                       # One-click setup script
 │   └── validate.sh                    # Run validation after deploy
+├── pre_scripts/
+│   ├── scan.sh                         # entry point (orchestrates everything)
+│   ├── merge_results.py                # normalises both tool outputs into one JSON
+│   └── generate_report.py              # renders the HTML dashboard
+├── pre_reports/                   # auto-created on first run
+│   ├── tfsec_<ts>.json                 # raw tfsec output
+│   ├── checkov_<ts>.json               # raw checkov output
+│   ├── merged_<ts>.json                # unified ranked findings
+│   └── report_<ts>.html                # open this in your br
 └── .github/
     └── workflows/
         └── ci.yml                     # GitHub Actions CI pipeline
@@ -58,6 +71,8 @@ TF_compliance/
 | Python     | >= 3.9   | CIS benchmark validation        |
 | AWS CLI    | >= 2.x   | AWS authentication              |
 | pip        | latest   | Python dependency management    |
+|tfsec jq    |v1.28.14  | tfsec dependency management     |
+|checkov     |3.2.506   | checkov dependency management   |
 
 ---
 
@@ -72,6 +87,16 @@ chmod +x scripts/*.sh
 ./scripts/setup.sh
 ```
 
+### Install the tools
+```
+brew install tfsec jq
+pip install checkov
+```
+### Make the script executable
+```
+chmod +x scripts/scan.sh
+```
+
 ### Step 2 — Configure AWS Credentials
 
 ```bash
@@ -82,6 +107,13 @@ export AWS_DEFAULT_REGION="us-east-1"
 
 # Option B: AWS CLI profile
 aws configure --profile dev
+```
+
+### Run the scanner
+```
+./scripts/scan.sh /path/to/your/terraform
+# or run against the included example:
+./pre_scripts/scan.sh ./terraform/environments/dev/
 ```
 
 ### Step 3 — Review and Customize Terraform Variables
