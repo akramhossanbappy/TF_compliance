@@ -1,0 +1,467 @@
+{
+  "report_metadata": {
+    "generated_at": "2026-03-20T15:23:52.035430+00:00",
+    "benchmark": "CIS AWS Foundations Benchmark v3.0",
+    "scope": "Security Groups"
+  },
+  "summary": {
+    "total_checks": 39,
+    "passed": 30,
+    "failed": 5,
+    "warnings": 4,
+    "pass_rate": "76.9%",
+    "by_severity": {
+      "HIGH": {
+        "PASS": 13,
+        "FAIL": 3,
+        "WARN": 0
+      },
+      "CRITICAL": {
+        "PASS": 4,
+        "FAIL": 0,
+        "WARN": 0
+      },
+      "MEDIUM": {
+        "PASS": 7,
+        "FAIL": 0,
+        "WARN": 1
+      },
+      "LOW": {
+        "PASS": 6,
+        "FAIL": 2,
+        "WARN": 3
+      }
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "CIS-5.1",
+      "rule_title": "No unrestricted SSH access",
+      "status": "PASS",
+      "severity": "HIGH",
+      "resource_id": "sg-0922e97c85e5c2739",
+      "resource_name": "default",
+      "description": "SSH access is properly restricted",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CIS-5.2",
+      "rule_title": "No unrestricted RDP access",
+      "status": "PASS",
+      "severity": "HIGH",
+      "resource_id": "sg-0922e97c85e5c2739",
+      "resource_name": "default",
+      "description": "RDP access is properly restricted",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CIS-5.3",
+      "rule_title": "No unrestricted ingress",
+      "status": "PASS",
+      "severity": "CRITICAL",
+      "resource_id": "sg-0922e97c85e5c2739",
+      "resource_name": "default",
+      "description": "No unrestricted ingress rules found",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CIS-5.4",
+      "rule_title": "Default SG restricts all traffic",
+      "status": "FAIL",
+      "severity": "HIGH",
+      "resource_id": "sg-0922e97c85e5c2739",
+      "resource_name": "default",
+      "description": "Default security group has active ingress/egress rules",
+      "remediation": "Remove all inbound and outbound rules from the default security group",
+      "details": "Ingress rules: 1, Egress rules: 1"
+    },
+    {
+      "rule_id": "CUSTOM-BROAD-CIDR",
+      "rule_title": "No overly broad CIDR ranges",
+      "status": "PASS",
+      "severity": "MEDIUM",
+      "resource_id": "sg-0922e97c85e5c2739",
+      "resource_name": "default",
+      "description": "No overly broad CIDR ranges found",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-DESCRIPTION",
+      "rule_title": "SG has meaningful description",
+      "status": "FAIL",
+      "severity": "LOW",
+      "resource_id": "sg-0922e97c85e5c2739",
+      "resource_name": "default",
+      "description": "Security group is missing a meaningful description",
+      "remediation": "Add a descriptive description to the security group",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-EGRESS",
+      "rule_title": "Egress is restricted",
+      "status": "WARN",
+      "severity": "MEDIUM",
+      "resource_id": "sg-0922e97c85e5c2739",
+      "resource_name": "default",
+      "description": "Security group allows ALL outbound traffic to 0.0.0.0/0",
+      "remediation": "Restrict egress to specific ports and destinations",
+      "details": "Rule: {'IpProtocol': '-1', 'UserIdGroupPairs': [], 'IpRanges': [{'CidrIp': '0.0.0.0/0'}], 'Ipv6Ranges': [], 'PrefixListIds': []}"
+    },
+    {
+      "rule_id": "CUSTOM-SENSITIVE-PORTS",
+      "rule_title": "No sensitive ports open to public",
+      "status": "PASS",
+      "severity": "HIGH",
+      "resource_id": "sg-0922e97c85e5c2739",
+      "resource_name": "default",
+      "description": "No sensitive ports open to public",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-TAGS",
+      "rule_title": "Required tags present",
+      "status": "FAIL",
+      "severity": "LOW",
+      "resource_id": "sg-0922e97c85e5c2739",
+      "resource_name": "default",
+      "description": "Missing required tags: Name, Environment, ManagedBy",
+      "remediation": "Add the following tags: Name, Environment, ManagedBy",
+      "details": null
+    },
+    {
+      "rule_id": "CIS-5.1",
+      "rule_title": "No unrestricted SSH access",
+      "status": "FAIL",
+      "severity": "HIGH",
+      "resource_id": "sg-090f1615fd9a77e67",
+      "resource_name": "myapp-dev-web-server",
+      "description": "Security group allows SSH (port 22) from 0.0.0.0/0",
+      "remediation": "Restrict SSH access to specific CIDR blocks (e.g., corporate VPN IP range)",
+      "details": "Rule: {'IpProtocol': 'tcp', 'FromPort': 22, 'ToPort': 22, 'UserIdGroupPairs': [], 'IpRanges': [{'Description': 'SSH from corporate VPN only', 'CidrIp': '0.0.0.0/0'}, {'Description': 'SSH from corporate VPN only', 'CidrIp': '172.31.0.0/16'}], 'Ipv6Ranges': [], 'PrefixListIds': []}"
+    },
+    {
+      "rule_id": "CIS-5.2",
+      "rule_title": "No unrestricted RDP access",
+      "status": "PASS",
+      "severity": "HIGH",
+      "resource_id": "sg-090f1615fd9a77e67",
+      "resource_name": "myapp-dev-web-server",
+      "description": "RDP access is properly restricted",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CIS-5.3",
+      "rule_title": "No unrestricted ingress",
+      "status": "PASS",
+      "severity": "CRITICAL",
+      "resource_id": "sg-090f1615fd9a77e67",
+      "resource_name": "myapp-dev-web-server",
+      "description": "No unrestricted ingress rules found",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CIS-5.4",
+      "rule_title": "Default SG restricts all traffic",
+      "status": "PASS",
+      "severity": "HIGH",
+      "resource_id": "sg-090f1615fd9a77e67",
+      "resource_name": "myapp-dev-web-server",
+      "description": "Not a default security group \u2014 skipped",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-BROAD-CIDR",
+      "rule_title": "No overly broad CIDR ranges",
+      "status": "PASS",
+      "severity": "MEDIUM",
+      "resource_id": "sg-090f1615fd9a77e67",
+      "resource_name": "myapp-dev-web-server",
+      "description": "No overly broad CIDR ranges found",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-DESCRIPTION",
+      "rule_title": "SG has meaningful description",
+      "status": "PASS",
+      "severity": "LOW",
+      "resource_id": "sg-090f1615fd9a77e67",
+      "resource_name": "myapp-dev-web-server",
+      "description": "Security group has a description",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-EGRESS",
+      "rule_title": "Egress is restricted",
+      "status": "PASS",
+      "severity": "MEDIUM",
+      "resource_id": "sg-090f1615fd9a77e67",
+      "resource_name": "myapp-dev-web-server",
+      "description": "Egress rules are properly restricted",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-SENSITIVE-PORTS",
+      "rule_title": "No sensitive ports open to public",
+      "status": "FAIL",
+      "severity": "HIGH",
+      "resource_id": "sg-090f1615fd9a77e67",
+      "resource_name": "myapp-dev-web-server",
+      "description": "SSH (port 22) is open to 0.0.0.0/0",
+      "remediation": "Restrict SSH (port 22) to specific CIDR blocks",
+      "details": "Rule: port 22-22"
+    },
+    {
+      "rule_id": "CUSTOM-TAGS",
+      "rule_title": "Required tags present",
+      "status": "PASS",
+      "severity": "LOW",
+      "resource_id": "sg-090f1615fd9a77e67",
+      "resource_name": "myapp-dev-web-server",
+      "description": "All required tags are present",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-UNUSED",
+      "rule_title": "No unused security groups",
+      "status": "WARN",
+      "severity": "LOW",
+      "resource_id": "sg-090f1615fd9a77e67",
+      "resource_name": "myapp-dev-web-server",
+      "description": "Security group is not attached to any network interface",
+      "remediation": "Review and delete unused security groups to reduce attack surface",
+      "details": null
+    },
+    {
+      "rule_id": "CIS-5.1",
+      "rule_title": "No unrestricted SSH access",
+      "status": "PASS",
+      "severity": "HIGH",
+      "resource_id": "sg-0daf70ede3a9b3f8b",
+      "resource_name": "myapp-dev-database",
+      "description": "SSH access is properly restricted",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CIS-5.2",
+      "rule_title": "No unrestricted RDP access",
+      "status": "PASS",
+      "severity": "HIGH",
+      "resource_id": "sg-0daf70ede3a9b3f8b",
+      "resource_name": "myapp-dev-database",
+      "description": "RDP access is properly restricted",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CIS-5.3",
+      "rule_title": "No unrestricted ingress",
+      "status": "PASS",
+      "severity": "CRITICAL",
+      "resource_id": "sg-0daf70ede3a9b3f8b",
+      "resource_name": "myapp-dev-database",
+      "description": "No unrestricted ingress rules found",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CIS-5.4",
+      "rule_title": "Default SG restricts all traffic",
+      "status": "PASS",
+      "severity": "HIGH",
+      "resource_id": "sg-0daf70ede3a9b3f8b",
+      "resource_name": "myapp-dev-database",
+      "description": "Not a default security group \u2014 skipped",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-BROAD-CIDR",
+      "rule_title": "No overly broad CIDR ranges",
+      "status": "PASS",
+      "severity": "MEDIUM",
+      "resource_id": "sg-0daf70ede3a9b3f8b",
+      "resource_name": "myapp-dev-database",
+      "description": "No overly broad CIDR ranges found",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-DESCRIPTION",
+      "rule_title": "SG has meaningful description",
+      "status": "PASS",
+      "severity": "LOW",
+      "resource_id": "sg-0daf70ede3a9b3f8b",
+      "resource_name": "myapp-dev-database",
+      "description": "Security group has a description",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-EGRESS",
+      "rule_title": "Egress is restricted",
+      "status": "PASS",
+      "severity": "MEDIUM",
+      "resource_id": "sg-0daf70ede3a9b3f8b",
+      "resource_name": "myapp-dev-database",
+      "description": "Egress rules are properly restricted",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-SENSITIVE-PORTS",
+      "rule_title": "No sensitive ports open to public",
+      "status": "PASS",
+      "severity": "HIGH",
+      "resource_id": "sg-0daf70ede3a9b3f8b",
+      "resource_name": "myapp-dev-database",
+      "description": "No sensitive ports open to public",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-TAGS",
+      "rule_title": "Required tags present",
+      "status": "PASS",
+      "severity": "LOW",
+      "resource_id": "sg-0daf70ede3a9b3f8b",
+      "resource_name": "myapp-dev-database",
+      "description": "All required tags are present",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-UNUSED",
+      "rule_title": "No unused security groups",
+      "status": "WARN",
+      "severity": "LOW",
+      "resource_id": "sg-0daf70ede3a9b3f8b",
+      "resource_name": "myapp-dev-database",
+      "description": "Security group is not attached to any network interface",
+      "remediation": "Review and delete unused security groups to reduce attack surface",
+      "details": null
+    },
+    {
+      "rule_id": "CIS-5.1",
+      "rule_title": "No unrestricted SSH access",
+      "status": "PASS",
+      "severity": "HIGH",
+      "resource_id": "sg-0faa5e09b6e51eb9a",
+      "resource_name": "myapp-dev-app-server",
+      "description": "SSH access is properly restricted",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CIS-5.2",
+      "rule_title": "No unrestricted RDP access",
+      "status": "PASS",
+      "severity": "HIGH",
+      "resource_id": "sg-0faa5e09b6e51eb9a",
+      "resource_name": "myapp-dev-app-server",
+      "description": "RDP access is properly restricted",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CIS-5.3",
+      "rule_title": "No unrestricted ingress",
+      "status": "PASS",
+      "severity": "CRITICAL",
+      "resource_id": "sg-0faa5e09b6e51eb9a",
+      "resource_name": "myapp-dev-app-server",
+      "description": "No unrestricted ingress rules found",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CIS-5.4",
+      "rule_title": "Default SG restricts all traffic",
+      "status": "PASS",
+      "severity": "HIGH",
+      "resource_id": "sg-0faa5e09b6e51eb9a",
+      "resource_name": "myapp-dev-app-server",
+      "description": "Not a default security group \u2014 skipped",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-BROAD-CIDR",
+      "rule_title": "No overly broad CIDR ranges",
+      "status": "PASS",
+      "severity": "MEDIUM",
+      "resource_id": "sg-0faa5e09b6e51eb9a",
+      "resource_name": "myapp-dev-app-server",
+      "description": "No overly broad CIDR ranges found",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-DESCRIPTION",
+      "rule_title": "SG has meaningful description",
+      "status": "PASS",
+      "severity": "LOW",
+      "resource_id": "sg-0faa5e09b6e51eb9a",
+      "resource_name": "myapp-dev-app-server",
+      "description": "Security group has a description",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-EGRESS",
+      "rule_title": "Egress is restricted",
+      "status": "PASS",
+      "severity": "MEDIUM",
+      "resource_id": "sg-0faa5e09b6e51eb9a",
+      "resource_name": "myapp-dev-app-server",
+      "description": "Egress rules are properly restricted",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-SENSITIVE-PORTS",
+      "rule_title": "No sensitive ports open to public",
+      "status": "PASS",
+      "severity": "HIGH",
+      "resource_id": "sg-0faa5e09b6e51eb9a",
+      "resource_name": "myapp-dev-app-server",
+      "description": "No sensitive ports open to public",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-TAGS",
+      "rule_title": "Required tags present",
+      "status": "PASS",
+      "severity": "LOW",
+      "resource_id": "sg-0faa5e09b6e51eb9a",
+      "resource_name": "myapp-dev-app-server",
+      "description": "All required tags are present",
+      "remediation": "N/A",
+      "details": null
+    },
+    {
+      "rule_id": "CUSTOM-UNUSED",
+      "rule_title": "No unused security groups",
+      "status": "WARN",
+      "severity": "LOW",
+      "resource_id": "sg-0faa5e09b6e51eb9a",
+      "resource_name": "myapp-dev-app-server",
+      "description": "Security group is not attached to any network interface",
+      "remediation": "Review and delete unused security groups to reduce attack surface",
+      "details": null
+    }
+  ]
+}
